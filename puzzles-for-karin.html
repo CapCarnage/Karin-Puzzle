@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Karin 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffe6e6, #ffcccc);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: #d6336c;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+      max-width: 1000px;
+      height: 600px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      background: white;
+    }
+
+    #nextBtn {
+      margin-top: 20px;
+      background: #ff5fa2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #nextBtn:hover {
+      background: #e94e93;
+    }
+
+    #musicToggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #fff0f5;
+      color: #d6336c;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    #finalMessage {
+      display: none;
+      max-width: 800px;
+      background: #fff0f5;
+      border: 2px solid #d6336c;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      white-space: pre-wrap;
+      font-size: 16px;
+      color: #333;
+    }
+
+    #finalMessage b {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💌 Your Puzzle Journey 💌</h1>
+
+  <iframe id="puzzleFrame"
+    src="https://www.jigsawplanet.com/?rc=play&pid=3d0b8a80b772&view=iframe"
+    allowfullscreen></iframe>
+
+  <button id="nextBtn">Next Puzzle ➡️</button>
+
+  <div id="finalMessage">
+    I won't write an A4 page here as you've requested that I don't and I don't want you to cry or get mad at me for breaking one of your rules 😘 so all I'll say is I'm sorry sweetie for yesterday adding on to your plate. I tried to pick you up more and instead I just weighed you down. I'm really really really sorry about it and I fumbled the ball badly and I promise now that I understand I'm gonna do better for you.
+
+    I did research online and read that puzzles can help with depression so I hope you enjoyed these little puzzles. I just need you to know even if I been an idiot yesterday I'm gonna do better and be better for you and helping you through this and I need you to know above all I love you Karin so so so so so so so so so much my sweetie, my soulmate, my one and only, the woman I love, the person who owns my heart completely, the one I want to build a life with, my future, my destiny, my partner, my wifey, my amazing amazing girlfriend ❤️❤️❤️ and I will <b>always</b> be here to support you and love you better than anyone has before.
+
+    I know you've been hurt and I will be here to help sooth the pain, be here to support you unlike anyone before and help you and go above and beyond and give you 110% because you deserve it. I meant every single word I said on that 1 hour rant yesterday about how much I love and care about you and you deserve my 110% and I will be the guy and the person in life that you can learn to depend and rely on because I wanna be that for you always with all my heart and help you on your healing journey.
+
+    I love you so so so so so much sweetie I really do. Now I will stop before this turns into an A4 page.
+  </div>
+
+  <button id="musicToggle" onclick="toggleMusic()">Play Music</button>
+  <audio id="bgMusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const puzzles = [
+      "https://www.jigsawplanet.com/?rc=play&pid=3d0b8a80b772&view=iframe", // Puzzle 1
+      "https://www.jigsawplanet.com/?rc=play&pid=3b028ee44b00&view=iframe", // Puzzle 2
+      "https://www.jigsawplanet.com/?rc=play&pid=3bfa938cc46a&view=iframe", // Puzzle 3
+    ];
+
+    let current = 0;
+    const frame = document.getElementById("puzzleFrame");
+    const finalMsg = document.getElementById("finalMessage");
+    const nextBtn = document.getElementById("nextBtn");
+
+    nextBtn.addEventListener("click", () => {
+      current++;
+      if (current < puzzles.length) {
+        frame.src = puzzles[current];
+      } else {
+        frame.style.display = "none";
+        nextBtn.style.display = "none";
+        finalMsg.style.display = "block";
+      }
+    });
+
+    function toggleMusic() {
+      const music = document.getElementById('bgMusic');
+      const btn = document.getElementById('musicToggle');
+      if (music.paused) {
+        music.play();
+        btn.textContent = 'Pause Music';
+      } else {
+        music.pause();
+        btn.textContent = 'Play Music';
+      }
+    }
+  </script>
+
+</body>
+</html>
